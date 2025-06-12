@@ -1,0 +1,1238 @@
+[
+    {
+        "text": "there is a dark brown wooden cabinet. placed next to the fridge.",
+        "scene_id": "scene0063_00",
+        "target_id": "10",
+        "target_label": "kitchen_cabinet",
+        "program": "# define variables for the kitchen cabinet and the refrigerator\n\nKITCHEN_CABINET_0 = DEFINE_VARIABLE(labels=[\"kitchen cabinet\", \"kitchen cabinets\"])\nREFRIGERATOR_0 = DEFINE_VARIABLE(labels=[\"refrigerator\"])\n\n# add a constraint: it's a dark brown wooden cabinet.\nCONSTRAINT_COLOR(target=KITCHEN_CABINET_0, condition=\"brown\")\n\n# add a constraint: placed next to the fridge.\nCONSTRAINT_NEAR(target=KITCHEN_CABINET_0, anchor=REFRIGERATOR_0)\n\n# set the CSP variable for the target object\nSET_TARGET(KITCHEN_CABINET_0)",
+        "query_id": 221,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                1.838140845298767,
+                -0.09350462257862091,
+                1.698696255683899
+            ],
+            "pmax": [
+                2.4782040119171143,
+                0.275632381439209,
+                2.072077751159668
+            ]
+        },
+        "anchor_bboxes": {
+            "2-refrigerator": {
+                "pmin": [
+                    1.720727801322937,
+                    -0.5664743781089783,
+                    -0.01062851957976818
+                ],
+                "pmax": [
+                    2.35785174369812,
+                    0.31126248836517334,
+                    1.6429212093353271
+                ]
+            }
+        },
+        "csp_desc": "1-kitchen_cabinet-kitchen_cabinets (target)\n2-refrigerator\nCONSTRAINT_NEAR [target: 1-kitchen_cabinet-kitchen_cabinets] [anchor: 2-refrigerator]\nCONSTRAINT_COLOR [target: 1-kitchen_cabinet-kitchen_cabinets] [condition: brown]"
+    },
+    {
+        "text": "this is black chair. it is facing a keyboard.",
+        "scene_id": "scene0653_00",
+        "target_id": "3",
+        "target_label": "chair",
+        "program": "# define variables for the chair and keyboard\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\", \"office chair\"])\nKEYBOARD_0 = DEFINE_VARIABLE(labels=[\"keyboard\"])\n\n# add a constraint: the chair is black\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"black\")\n\n# add a constraint: the chair is facing a keyboard\nCONSTRAINT_OPPOSITE(target=CHAIR_0, anchor=KEYBOARD_0)\n\n# set the CSP variable for the target object\nSET_TARGET(CHAIR_0)",
+        "query_id": 368,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.7549667358398438,
+                -2.179248571395874,
+                0.003473482793197036
+            ],
+            "pmax": [
+                -1.0765634775161743,
+                -1.516661524772644,
+                0.9759439826011658
+            ]
+        },
+        "anchor_bboxes": {
+            "2-keyboard": {
+                "pmin": [
+                    -2.1738455295562744,
+                    -1.815443754196167,
+                    0.7716033458709717
+                ],
+                "pmax": [
+                    -1.9186487197875977,
+                    -1.4030240774154663,
+                    0.8311033248901367
+                ]
+            }
+        },
+        "csp_desc": "1-chair-office_chair (target)\n2-keyboard\nCONSTRAINT_OPPOSITE [target: 1-chair-office_chair] [anchor: 2-keyboard]\nCONSTRAINT_COLOR [target: 1-chair-office_chair] [condition: black]"
+    },
+    {
+        "text": "it is a brown leather chair that is furthest to the left against the back wall. the chair is turned, facing to the right.",
+        "scene_id": "scene0660_00",
+        "target_id": "5",
+        "target_label": "chair",
+        "program": "# define a variable for the chair\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nWALL_0 = DEFINE_VARIABLE(labels=[\"wall\"])\nROOM_CENTER = DEFINE_VARIABLE(labels=[\"room center\"])\n\n# add a constraint: the chair is brown\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"brown\")\n\n# the chair is furthest to the left against the back wall\nCONSTRAINT_FAR(target=CHAIR_0, anchor=ROOM_CENTER)\n\n# near the wall\nCONSTRAINT_NEAR(target=CHAIR_0, anchor=WALL_0)\n\n# set the CSP variable for the target object\nSET_TARGET(CHAIR_0)",
+        "query_id": 549,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.0827627182006836,
+                -1.3172736167907715,
+                0.335599809885025
+            ],
+            "pmax": [
+                -0.45552507042884827,
+                -0.6620648503303528,
+                0.8197551965713501
+            ]
+        },
+        "anchor_bboxes": {
+            "2-wall": {
+                "pmin": [
+                    -1.6451630592346191,
+                    -3.3606600761413574,
+                    0.022285284474492073
+                ],
+                "pmax": [
+                    -1.1706209182739258,
+                    2.4968230724334717,
+                    1.176479697227478
+                ]
+            },
+            "3-room_center": {
+                "pmin": [
+                    0.5240069627761841,
+                    -0.29550695419311523,
+                    0.5707836151123047
+                ],
+                "pmax": [
+                    0.5240269899368286,
+                    -0.2954869270324707,
+                    0.5708036422729492
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n3-room_center\n2-wall\nCONSTRAINT_COLOR [target: 1-chair] [condition: brown]\nCONSTRAINT_NEAR [target: 1-chair] [anchor: 2-wall]\nCONSTRAINT_FAR [target: 1-chair] [anchor: 3-room_center]"
+    },
+    {
+        "text": "this is a brown desk. it is in front of another brown desk.",
+        "scene_id": "scene0653_00",
+        "target_id": "14",
+        "target_label": "desk",
+        "program": "# define variables for the desks\nDESK_0 = DEFINE_VARIABLE(labels=[\"desk\"])\nDESK_1 = DEFINE_VARIABLE(labels=[\"desk\"])\n\n# add a constraint: the desks are brown\nCONSTRAINT_COLOR(target=DESK_0, condition=\"brown\")\nCONSTRAINT_COLOR(target=DESK_1, condition=\"brown\")\n\n# add a constraint: the target desk is in front of another brown desk\nCONSTRAINT_FRONT(target=DESK_0, anchor=DESK_1)\n\n# set the CSP variable for the target object\nSET_TARGET(DESK_0)",
+        "query_id": 1234,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.71237713098526,
+                -2.591869354248047,
+                -0.06979144364595413
+            ],
+            "pmax": [
+                -0.04076746851205826,
+                -1.1089240312576294,
+                0.7459483742713928
+            ]
+        },
+        "anchor_bboxes": {
+            "2-desk": {
+                "pmin": [
+                    0.8413379192352295,
+                    -2.6440682411193848,
+                    -0.08593537658452988
+                ],
+                "pmax": [
+                    1.5760606527328491,
+                    -1.089504361152649,
+                    0.7558331489562988
+                ]
+            }
+        },
+        "csp_desc": "1-desk (target)\n2-desk\nCONSTRAINT_FRONT [target: 1-desk] [anchor: 2-desk]\nCONSTRAINT_COLOR [target: 2-desk] [condition: brown]\nCONSTRAINT_COLOR [target: 1-desk] [condition: brown]"
+    },
+    {
+        "text": "this is a flip open chair. it is blue and has a net seat.",
+        "scene_id": "scene0568_00",
+        "target_id": "1",
+        "target_label": "chair",
+        "program": "CHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\", \"bookshelf\", \"couch\", \"radiator\", \"shelf\", \"stair rail\", \"table\", \"tv stand\"])\n\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"blue\")\n\nSET_TARGET(CHAIR_0)",
+        "query_id": 1564,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.1675204634666443,
+                -3.013493061065674,
+                -0.015655802562832832
+            ],
+            "pmax": [
+                0.2194073498249054,
+                -2.5773661136627197,
+                0.5072917938232422
+            ]
+        },
+        "anchor_bboxes": {},
+        "csp_desc": "1-chair-bookshelf-couch-radiator-shelf-stair_rail-table-tv_stand (target)\nCONSTRAINT_COLOR [target: 1-chair-bookshelf-couch-radiator-shelf-stair_rail-table-tv_stand] [condition: blue]"
+    },
+    {
+        "text": "the washing machines are tall and white. they are located perpendicular to the blue wall.",
+        "scene_id": "scene0595_00",
+        "target_id": "1",
+        "target_label": "washing_machine",
+        "program": "# define variables for the washing machine and the wall\nWASHING_MACHINE_0 = DEFINE_VARIABLE(labels=[\"washing machine\", \"clothes dryers\"]) # washing machine and clothes dryers are synonyms\nWALL_0 = DEFINE_VARIABLE(labels=[\"wall\"])\n\n# add a constraint: the washing machine is white\nCONSTRAINT_COLOR(target=WASHING_MACHINE_0, condition=\"white\")\n\n# add a constraint: the wall is blue\nCONSTRAINT_COLOR(target=WALL_0, condition=\"blue\")\n\n# add a constraint: the washing machine is perpendicular to the wall\nCONSTRAINT_ACROSS(target=WASHING_MACHINE_0, anchor=WALL_0)\n\n# set the CSP variable for the target object\nSET_TARGET(WASHING_MACHINE_0)",
+        "query_id": 1841,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.4378468990325928,
+                -1.722360372543335,
+                -0.039802003651857376
+            ],
+            "pmax": [
+                -0.0438237264752388,
+                1.7865996360778809,
+                1.1251269578933716
+            ]
+        },
+        "anchor_bboxes": {
+            "2-wall": {
+                "pmin": [
+                    -1.1004170179367065,
+                    2.00140643119812,
+                    0.06751493364572525
+                ],
+                "pmax": [
+                    1.5961310863494873,
+                    2.3918519020080566,
+                    1.7138820886611938
+                ]
+            }
+        },
+        "csp_desc": "1-washing_machine-clothes_dryers (target)\n2-wall\nCONSTRAINT_ACROSS [target: 1-washing_machine-clothes_dryers] [anchor: 2-wall]\nCONSTRAINT_COLOR [target: 2-wall] [condition: blue]\nCONSTRAINT_COLOR [target: 1-washing_machine-clothes_dryers] [condition: white]"
+    },
+    {
+        "text": "this is a long table. it is in the center of the room.",
+        "scene_id": "scene0249_00",
+        "target_id": "24",
+        "target_label": "table",
+        "program": "# define variables for the table and the room center\nTABLE_0 = DEFINE_VARIABLE(labels=[\"table\", \"board\", \"folded table\"])\nROOM_CENTER = DEFINE_VARIABLE(labels=[\"room center\"])\n\n# add a constraint: the table is long\nCONSTRAINT_MAX_OF(target=TABLE_0, score_func=\"size-x\")\n\n# add a constraint: the table is in the center of the room\nCONSTRAINT_CENTER(target=TABLE_0, anchor=ROOM_CENTER)\n\n# set the CSP variable for the target object\nSET_TARGET(TABLE_0)",
+        "query_id": 2877,
+        "acc05": false,
+        "acc025": false
+    },
+    {
+        "text": "it is a blue chair. the blue chair is the second right chair of the table to the right of the door.",
+        "scene_id": "scene0665_00",
+        "target_id": "1",
+        "target_label": "chair",
+        "program": "# define the variables\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nTABLE_0 = DEFINE_VARIABLE(labels=[\"table\"])\nDOOR_0 = DEFINE_VARIABLE(labels=[\"door\", \"doorframe\"])\n\n# add the color constraint\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"blue\")\n\n# the table is to the right of the door\nCONSTRAINT_RIGHT(target=TABLE_0, anchor=DOOR_0)\n\n# the chair is the second right of the table, meaning there's a chair to the right of the table, and our target is to the right of that chair.\nCHAIR_1 = DEFINE_VARIABLE(labels=[\"chair\"])\nCONSTRAINT_RIGHT(target=CHAIR_1, anchor=TABLE_0)\nCONSTRAINT_RIGHT(target=CHAIR_0, anchor=CHAIR_1)\n\n# set the target\nSET_TARGET(CHAIR_0)",
+        "query_id": 3632,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                0.9535452723503113,
+                0.21161878108978271,
+                0.6018058657646179
+            ],
+            "pmax": [
+                1.5488711595535278,
+                0.8460422158241272,
+                0.996924102306366
+            ]
+        },
+        "anchor_bboxes": {
+            "2-table": {
+                "pmin": [
+                    -1.913213849067688,
+                    -1.2479212284088135,
+                    0.0020731010008603334
+                ],
+                "pmax": [
+                    -0.9112247228622437,
+                    0.297593891620636,
+                    0.7575171589851379
+                ]
+            },
+            "3-door-doorframe": {
+                "pmin": [
+                    -3.1211578845977783,
+                    -2.4101665019989014,
+                    -0.027373619377613068
+                ],
+                "pmax": [
+                    -2.953225612640381,
+                    -1.3219560384750366,
+                    1.861431360244751
+                ]
+            },
+            "6-chair": {
+                "pmin": [
+                    -1.0831785202026367,
+                    -0.41621124744415283,
+                    0.0032312937546521425
+                ],
+                "pmax": [
+                    -0.4158070683479309,
+                    0.22579477727413177,
+                    0.834509551525116
+                ]
+            }
+        },
+        "csp_desc": "6-chair\n1-chair (target)\n3-door-doorframe\n2-table\nCONSTRAINT_RIGHT [target: 1-chair] [anchor: 6-chair]\nCONSTRAINT_COLOR [target: 1-chair] [condition: blue]\nCONSTRAINT_RIGHT [target: 6-chair] [anchor: 2-table]\nCONSTRAINT_RIGHT [target: 2-table] [anchor: 3-door-doorframe]"
+    },
+    {
+        "text": "the chair is the closest one to the entrance door. the chair is blue with four legs.",
+        "scene_id": "scene0665_00",
+        "target_id": "5",
+        "target_label": "chair",
+        "program": "# define variables for the chair and door\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nDOOR_0 = DEFINE_VARIABLE(labels=[\"door\", \"doorframe\"])\n\n# The color \"blue\" applies only to the chair.\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"blue\")\n\n# add a constraint: the chair is the closest one to the entrance door\nCONSTRAINT_MIN_OF(target=CHAIR_0, anchor=DOOR_0, score_func=\"distance\")\n\n# set the CSP variable for the target object\nSET_TARGET(CHAIR_0)",
+        "query_id": 3784,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.9582926630973816,
+                -3.639605760574341,
+                0.2363446205854416
+            ],
+            "pmax": [
+                -0.4807188808917999,
+                -3.2042624950408936,
+                0.6255589723587036
+            ]
+        },
+        "anchor_bboxes": {
+            "2-door-doorframe": {
+                "pmin": [
+                    -3.1776647567749023,
+                    -2.3663923740386963,
+                    -0.030064009130001068
+                ],
+                "pmax": [
+                    -3.0011210441589355,
+                    -1.4587525129318237,
+                    1.8934555053710938
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n2-door-doorframe\nCONSTRAINT_COLOR [target: 1-chair] [condition: blue]\nCONSTRAINT_MIN_OF [target: 1-chair] [anchor: 2-door-doorframe]"
+    },
+    {
+        "text": "this is a black monitor. it is to the left of another monitor.",
+        "scene_id": "scene0474_00",
+        "target_id": "12",
+        "target_label": "monitor",
+        "program": "# define a variable for the black monitor\nMONITOR_0 = DEFINE_VARIABLE(labels=[\"monitor\"])\n\n# define a variable for the another monitor\nMONITOR_1 = DEFINE_VARIABLE(labels=[\"monitor\"])\n\n# add a constraint: the monitor is black\nCONSTRAINT_COLOR(target=MONITOR_0, condition=\"black\")\n\n# add a constraint: the monitor is to the left of another monitor\nCONSTRAINT_LEFT(target=MONITOR_0, anchor=MONITOR_1)\n\n# set the variable for the target object\nSET_TARGET(MONITOR_0)",
+        "query_id": 3982,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                1.134932518005371,
+                -1.6549198627471924,
+                0.7637688517570496
+            ],
+            "pmax": [
+                1.2201443910598755,
+                -0.9802822470664978,
+                1.2221883535385132
+            ]
+        },
+        "anchor_bboxes": {
+            "2-monitor": {
+                "pmin": [
+                    0.9915466904640198,
+                    -2.28802227973938,
+                    0.7652916312217712
+                ],
+                "pmax": [
+                    1.2506779432296753,
+                    -1.548203706741333,
+                    1.2432373762130737
+                ]
+            }
+        },
+        "csp_desc": "1-monitor (target)\n2-monitor\nCONSTRAINT_LEFT [target: 1-monitor] [anchor: 2-monitor]\nCONSTRAINT_COLOR [target: 1-monitor] [condition: black]"
+    },
+    {
+        "text": "this is a black trash can. it is on the floor.",
+        "scene_id": "scene0593_00",
+        "target_id": "8",
+        "target_label": "trash_can",
+        "program": "# define variables for the trash can and floor\nTRASH_CAN_0 = DEFINE_VARIABLE(labels=[\"trash can\"])\nFLOOR_0 = DEFINE_VARIABLE(labels=[\"floor\"])\n\n# add a constraint: the trash can is black\nCONSTRAINT_COLOR(target=TRASH_CAN_0, condition=\"black\")\n\n# add a constraint: the trash can is on the floor\nCONSTRAINT_ON(target=TRASH_CAN_0, anchor=FLOOR_0)\n\n# set the CSP variable for the target object\nSET_TARGET(TRASH_CAN_0)",
+        "query_id": 4504,
+        "acc05": false,
+        "acc025": false
+    },
+    {
+        "text": "the chair is the closest one to the door from the right. the chair is blue with four legs.",
+        "scene_id": "scene0665_00",
+        "target_id": "5",
+        "target_label": "chair",
+        "program": "# define variables for the chair and door\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nDOOR_0 = DEFINE_VARIABLE(labels=[\"door\", \"doorframe\"])\n\n# since the query specifies the chair from the right, we should translate it as from the right\nCONSTRAINT_RIGHT(target=CHAIR_0, anchor=DOOR_0)\n\n# the chair is the closest one to the door from the right\nCONSTRAINT_MIN_OF(target=CHAIR_0, anchor=DOOR_0, score_func=\"distance\")\n\n# the chair is blue\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"blue\")\n\n# set the CSP variable for the target object\nSET_TARGET(CHAIR_0)",
+        "query_id": 4823,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                0.9535452723503113,
+                0.21161878108978271,
+                0.6018058657646179
+            ],
+            "pmax": [
+                1.5488711595535278,
+                0.8460422158241272,
+                0.996924102306366
+            ]
+        },
+        "anchor_bboxes": {
+            "2-door-doorframe": {
+                "pmin": [
+                    -3.1211578845977783,
+                    -2.4101665019989014,
+                    -0.027373619377613068
+                ],
+                "pmax": [
+                    -2.953225612640381,
+                    -1.3219560384750366,
+                    1.861431360244751
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n2-door-doorframe\nCONSTRAINT_COLOR [target: 1-chair] [condition: blue]\nCONSTRAINT_RIGHT [target: 1-chair] [anchor: 2-door-doorframe]\nCONSTRAINT_MIN_OF [target: 1-chair] [anchor: 2-door-doorframe]"
+    },
+    {
+        "text": "this is a brown chair. it is to the right of another chair.",
+        "scene_id": "scene0355_00",
+        "target_id": "9",
+        "target_label": "chair",
+        "program": "# define variables for the chairs\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nCHAIR_1 = DEFINE_VARIABLE(labels=[\"chair\"])\n\n# add a constraint: the chair is brown\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"brown\")\n\n# add a constraint: the chair is to the right of another chair\nCONSTRAINT_RIGHT(target=CHAIR_0, anchor=CHAIR_1)\n\n# set the CSP variable for the target object\nSET_TARGET(CHAIR_0)",
+        "query_id": 5101,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -2.682534694671631,
+                0.31063997745513916,
+                0.6570667624473572
+            ],
+            "pmax": [
+                -2.0371711254119873,
+                0.977069079875946,
+                1.1713443994522095
+            ]
+        },
+        "anchor_bboxes": {
+            "2-chair": {
+                "pmin": [
+                    -2.2030084133148193,
+                    -0.23687158524990082,
+                    0.5356898307800293
+                ],
+                "pmax": [
+                    -1.5763158798217773,
+                    0.38301587104797363,
+                    0.9952824115753174
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n2-chair\nCONSTRAINT_RIGHT [target: 1-chair] [anchor: 2-chair]\nCONSTRAINT_COLOR [target: 1-chair] [condition: brown]"
+    },
+    {
+        "text": "this is a white door. it is at the far end of the room.",
+        "scene_id": "scene0435_00",
+        "target_id": "13",
+        "target_label": "door",
+        "program": "# define the door variable\nDOOR_0 = DEFINE_VARIABLE(labels=[\"door\"])\n\n# define the room center variable\nROOM_CENTER_0 = DEFINE_VARIABLE(labels=[\"room center\"])\n\n# constraint: the door is white\nCONSTRAINT_COLOR(target=DOOR_0, condition=\"white\")\n\n# add a constraint: the door is at the far end of the room\nCONSTRAINT_FAR(target=DOOR_0, anchor=ROOM_CENTER_0)\n\n# set the CSP variable for the target object\nSET_TARGET(DOOR_0)",
+        "query_id": 5247,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.33507856726646423,
+                -3.1512057781219482,
+                -0.014589394442737103
+            ],
+            "pmax": [
+                -0.220499187707901,
+                -2.1751151084899902,
+                1.2492799758911133
+            ]
+        },
+        "anchor_bboxes": {
+            "2-room_center": {
+                "pmin": [
+                    0.021057618781924248,
+                    -0.4239763021469116,
+                    1.1053444147109985
+                ],
+                "pmax": [
+                    0.02107761986553669,
+                    -0.4239562749862671,
+                    1.105364441871643
+                ]
+            }
+        },
+        "csp_desc": "1-door (target)\n2-room_center\nCONSTRAINT_FAR [target: 1-door] [anchor: 2-room_center]\nCONSTRAINT_COLOR [target: 1-door] [condition: white]"
+    },
+    {
+        "text": "it is a brown door. the door is at the end of the hall.",
+        "scene_id": "scene0435_00",
+        "target_id": "13",
+        "target_label": "door",
+        "program": "# define variables for the door\nDOOR_0 = DEFINE_VARIABLE(labels=[\"door\", \"doorframe\"])\n\n# add a constraint: the door is brown\nCONSTRAINT_COLOR(target=DOOR_0, condition=\"brown\")\n\n# set the CSP variable for the target object\nSET_TARGET(DOOR_0)",
+        "query_id": 5383,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.29250434041023254,
+                -3.8293583393096924,
+                0.008750845678150654
+            ],
+            "pmax": [
+                -0.10310658812522888,
+                -3.7137451171875,
+                1.341935157775879
+            ]
+        },
+        "anchor_bboxes": {},
+        "csp_desc": "1-door-doorframe (target)\nCONSTRAINT_COLOR [target: 1-door-doorframe] [condition: brown]"
+    },
+    {
+        "text": "this window is on the right. it is bright.",
+        "scene_id": "scene0500_00",
+        "target_id": "26",
+        "target_label": "window",
+        "program": "# define the window variable\nWINDOW_0 = DEFINE_VARIABLE(labels=[\"window\"])\n\n# window is on the right. This means it's far to the left of the room center.\nROOM_CENTER_0 = DEFINE_VARIABLE(labels=[\"room center\"])\nCONSTRAINT_RIGHT(target=WINDOW_0, anchor=ROOM_CENTER_0)\n\n# the description 'bright' doesn't relate to any spatial information, and it doesn't represent an existing color in CSS4, so it can't be used.\n\n# set the variable for the target object\nSET_TARGET(WINDOW_0)",
+        "query_id": 5448,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                2.77843976020813,
+                -0.5185905694961548,
+                0.44207125902175903
+            ],
+            "pmax": [
+                3.3517017364501953,
+                1.1767703294754028,
+                1.369240164756775
+            ]
+        },
+        "anchor_bboxes": {
+            "2-room_center": {
+                "pmin": [
+                    0.687645673751831,
+                    0.5662338733673096,
+                    1.5781418085098267
+                ],
+                "pmax": [
+                    0.6876657009124756,
+                    0.5662539005279541,
+                    1.5781618356704712
+                ]
+            }
+        },
+        "csp_desc": "1-window (target)\n2-room_center\nCONSTRAINT_RIGHT [target: 1-window] [anchor: 2-room_center]"
+    },
+    {
+        "text": "there is a circular wooden end table. it is next to a teal couch.",
+        "scene_id": "scene0549_00",
+        "target_id": "5",
+        "target_label": "end_table",
+        "program": "# define variables for the end table and couch\nEND_TABLE_0 = DEFINE_VARIABLE(labels=[\"end table\", \"table\"])\nCOUCH_0 = DEFINE_VARIABLE(labels=[\"couch\", \"armchair\"])\n\n# add a constraint: the couch is teal\nCONSTRAINT_COLOR(target=COUCH_0, condition=\"teal\")\n\n# add a constraint: the end table is next to the couch\nCONSTRAINT_NEAR(target=END_TABLE_0, anchor=COUCH_0)\n\n# set the CSP variable for the target object\nSET_TARGET(END_TABLE_0)",
+        "query_id": 5648,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -2.8278493881225586,
+                -1.4848252534866333,
+                0.6674866676330566
+            ],
+            "pmax": [
+                -2.1735284328460693,
+                -0.7634888887405396,
+                0.7861939072608948
+            ]
+        },
+        "anchor_bboxes": {
+            "2-couch-armchair": {
+                "pmin": [
+                    -2.1933610439300537,
+                    -1.1742924451828003,
+                    0.041290976107120514
+                ],
+                "pmax": [
+                    -1.3162564039230347,
+                    -0.40552639961242676,
+                    0.8719031810760498
+                ]
+            }
+        },
+        "csp_desc": "1-end_table-table (target)\n2-couch-armchair\nCONSTRAINT_NEAR [target: 1-end_table-table] [anchor: 2-couch-armchair]\nCONSTRAINT_COLOR [target: 2-couch-armchair] [condition: teal]"
+    },
+    {
+        "text": "the table is brown and rectangular. it is to the right of the tall cabinet.",
+        "scene_id": "scene0527_00",
+        "target_id": "4",
+        "target_label": "table",
+        "program": "# define variables for the table and cabinet\nTABLE_0 = DEFINE_VARIABLE(labels=[\"table\", \"end table\"])\nCABINET_0 = DEFINE_VARIABLE(labels=[\"cabinet\"])\n\n# add a constraint: the table is brown\nCONSTRAINT_COLOR(target=TABLE_0, condition=\"brown\")\n\n# add a constraint: the table is to the right of the tall cabinet\nCONSTRAINT_RIGHT(target=TABLE_0, anchor=CABINET_0)\n\n# set the CSP variable for the target object\nSET_TARGET(TABLE_0)",
+        "query_id": 5793,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.31274300813674927,
+                0.9124691486358643,
+                -0.01466920506209135
+            ],
+            "pmax": [
+                0.16898873448371887,
+                1.3567676544189453,
+                0.9638363122940063
+            ]
+        },
+        "anchor_bboxes": {
+            "2-cabinet": {
+                "pmin": [
+                    -1.166540503501892,
+                    1.0885834693908691,
+                    1.1303905248641968
+                ],
+                "pmax": [
+                    -0.33341774344444275,
+                    1.2820988893508911,
+                    1.685564398765564
+                ]
+            }
+        },
+        "csp_desc": "1-table-end_table (target)\n2-cabinet\nCONSTRAINT_RIGHT [target: 1-table-end_table] [anchor: 2-cabinet]\nCONSTRAINT_COLOR [target: 1-table-end_table] [condition: brown]"
+    },
+    {
+        "text": "this table is in the middle. it is rectangular.",
+        "scene_id": "scene0685_00",
+        "target_id": "11",
+        "target_label": "table",
+        "program": "# define variables for the table and room center\nTABLE_0 = DEFINE_VARIABLE(labels=[\"table\"])\nROOM_CENTER_0 = DEFINE_VARIABLE(labels=[\"room center\"])\n\n# constraint: the table is in the middle\nCONSTRAINT_NEAR(target=TABLE_0, anchor=ROOM_CENTER_0)\n\n# set the CSP variable for the target object\nSET_TARGET(TABLE_0)",
+        "query_id": 6184,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.2007668018341064,
+                -0.765941858291626,
+                -0.031054381281137466
+            ],
+            "pmax": [
+                -0.2551320195198059,
+                0.6143073439598083,
+                0.7384755611419678
+            ]
+        },
+        "anchor_bboxes": {
+            "2-room_center": {
+                "pmin": [
+                    -0.04235844314098358,
+                    -0.38392412662506104,
+                    1.475387454032898
+                ],
+                "pmax": [
+                    -0.04233844578266144,
+                    -0.3839040994644165,
+                    1.4754074811935425
+                ]
+            }
+        },
+        "csp_desc": "1-table (target)\n2-room_center\nCONSTRAINT_NEAR [target: 1-table] [anchor: 2-room_center]"
+    },
+    {
+        "text": "this is a blue chair. it is to the left of another chair.",
+        "scene_id": "scene0665_00",
+        "target_id": "3",
+        "target_label": "chair",
+        "program": "# define variables for the chairs\nCHAIR_BLUE = DEFINE_VARIABLE(labels=[\"chair\"])\nCHAIR_OTHER = DEFINE_VARIABLE(labels=[\"chair\"])\n\n# add a constraint: the target chair is blue\nCONSTRAINT_COLOR(target=CHAIR_BLUE, condition=\"blue\")\n\n# add a constraint: the target chair is to the left of another chair\nCONSTRAINT_LEFT(target=CHAIR_BLUE, anchor=CHAIR_OTHER)\n\n# set the target\nSET_TARGET(CHAIR_BLUE)",
+        "query_id": 6262,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                1.1781582832336426,
+                2.8809046745300293,
+                0.46264487504959106
+            ],
+            "pmax": [
+                1.7361897230148315,
+                3.405024290084839,
+                0.8674042820930481
+            ]
+        },
+        "anchor_bboxes": {
+            "2-chair": {
+                "pmin": [
+                    2.0737862586975098,
+                    2.79744291305542,
+                    0.4788234829902649
+                ],
+                "pmax": [
+                    2.699298620223999,
+                    3.3015716075897217,
+                    0.8899595141410828
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n2-chair\nCONSTRAINT_LEFT [target: 1-chair] [anchor: 2-chair]\nCONSTRAINT_COLOR [target: 1-chair] [condition: blue]"
+    },
+    {
+        "text": "this is a white towel. it is on the bottom shelf.",
+        "scene_id": "scene0527_00",
+        "target_id": "27",
+        "target_label": "towel",
+        "program": "# define variables for the towel\nTOWEL_0 = DEFINE_VARIABLE(labels=[\"towel\"])\n\n# add a constraint: the towel is white\nCONSTRAINT_COLOR(target=TOWEL_0, condition=\"white\")\n\n# add a constraint: the towel is on the bottom shelf, thus it should be the object with minimal z axis coordinate\nCONSTRAINT_MIN_OF(target=TOWEL_0, score_func=\"position-z\")\n\n# set the CSP variable for the target object\nSET_TARGET(TOWEL_0)",
+        "query_id": 6384,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.2731273174285889,
+                -0.7458724975585938,
+                0.4761900305747986
+            ],
+            "pmax": [
+                -1.094628095626831,
+                -0.46702244877815247,
+                1.559818983078003
+            ]
+        },
+        "anchor_bboxes": {},
+        "csp_desc": "1-towel (target)\nCONSTRAINT_COLOR [target: 1-towel] [condition: white]\nCONSTRAINT_MIN_OF [target: 1-towel] [anchor: (none)]"
+    },
+    {
+        "text": "this is a brown chair. it is to the right of another chair.",
+        "scene_id": "scene0095_00",
+        "target_id": "15",
+        "target_label": "chair",
+        "program": "# define variables for the chairs\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nCHAIR_1 = DEFINE_VARIABLE(labels=[\"chair\"])\n\n# add a constraint: the target chair is brown\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"brown\")\n\n# add a constraint: the brown chair is to the right of another chair\nCONSTRAINT_RIGHT(target=CHAIR_0, anchor=CHAIR_1)\n\n# set the CSP variable for the target object\nSET_TARGET(CHAIR_0)",
+        "query_id": 6414,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.687076449394226,
+                -3.44989275932312,
+                0.37984102964401245
+            ],
+            "pmax": [
+                -1.2036585807800293,
+                -2.917668104171753,
+                0.9190434217453003
+            ]
+        },
+        "anchor_bboxes": {
+            "2-chair": {
+                "pmin": [
+                    -1.2486543655395508,
+                    -3.4863195419311523,
+                    0.42969024181365967
+                ],
+                "pmax": [
+                    -0.8010176420211792,
+                    -2.972755193710327,
+                    0.9098042249679565
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n2-chair\nCONSTRAINT_RIGHT [target: 1-chair] [anchor: 2-chair]\nCONSTRAINT_COLOR [target: 1-chair] [condition: brown]"
+    },
+    {
+        "text": "this chair is located behind a rectangular table that is to the left of the low square table. the chair is the second to the left of the red seat.",
+        "scene_id": "scene0187_00",
+        "target_id": "14",
+        "target_label": "chair",
+        "program": "# The query is: \"this chair is located behind a rectangular table that is to the left of the low square table. the chair is the second to the left of the red seat.\"\n# The relevant objects are chair, table, seat\n\n# Since table and coffee table can be used interchangeably, we will use table\n\n#define the variables\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nTABLE_0 = DEFINE_VARIABLE(labels=[\"table\", \"coffee table\"])\nTABLE_1 = DEFINE_VARIABLE(labels=[\"table\", \"coffee table\"]) #low square table\nSEAT_0 = DEFINE_VARIABLE(labels=[\"seat\"])\n\n#chair is behind the rectangular table\nCONSTRAINT_BEHIND(target=CHAIR_0, anchor=TABLE_0)\n\n#table is to the left of the low square table\nCONSTRAINT_LEFT(target=TABLE_0, anchor=TABLE_1)\n\n#define the second seat to the left\nSEAT_1 = DEFINE_VARIABLE(labels=[\"seat\"]) #seat to the left\nCONSTRAINT_LEFT(target=SEAT_1, anchor=SEAT_0)\n\n#the target chair is to the left of the left seat\nCONSTRAINT_LEFT(target=CHAIR_0, anchor=SEAT_1)\n\n#seat is red\nCONSTRAINT_COLOR(target=SEAT_0, condition=\"red\")\n\n#set the target\nSET_TARGET(CHAIR_0)",
+        "query_id": 6511,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                1.1781808137893677,
+                -1.4166592359542847,
+                0.241083562374115
+            ],
+            "pmax": [
+                1.827003002166748,
+                -0.8557746410369873,
+                0.8013960719108582
+            ]
+        },
+        "anchor_bboxes": {
+            "2-table-coffee_table": {
+                "pmin": [
+                    0.8179367780685425,
+                    -1.9102152585983276,
+                    0.01159661915153265
+                ],
+                "pmax": [
+                    2.957691192626953,
+                    -0.890222430229187,
+                    0.8612855076789856
+                ]
+            },
+            "3-table-coffee_table": {
+                "pmin": [
+                    -0.9869934320449829,
+                    -1.9627633094787598,
+                    -0.047534357756376266
+                ],
+                "pmax": [
+                    0.11136459559202194,
+                    -0.8694378733634949,
+                    0.3845813274383545
+                ]
+            },
+            "4-seat": {
+                "pmin": [
+                    1.138942003250122,
+                    1.4738242626190186,
+                    0.24552121758460999
+                ],
+                "pmax": [
+                    1.7686612606048584,
+                    2.110701322555542,
+                    0.508550226688385
+                ]
+            },
+            "7-seat": {
+                "pmin": [
+                    -1.2714707851409912,
+                    -3.1414523124694824,
+                    0.019576534628868103
+                ],
+                "pmax": [
+                    -0.8732740879058838,
+                    -2.764435291290283,
+                    0.4252326190471649
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n3-table-coffee_table\n4-seat\n7-seat\n2-table-coffee_table\nCONSTRAINT_LEFT [target: 1-chair] [anchor: 7-seat]\nCONSTRAINT_BEHIND [target: 1-chair] [anchor: 2-table-coffee_table]\nCONSTRAINT_LEFT [target: 7-seat] [anchor: 4-seat]\nCONSTRAINT_COLOR [target: 4-seat] [condition: red]\nCONSTRAINT_LEFT [target: 2-table-coffee_table] [anchor: 3-table-coffee_table]"
+    },
+    {
+        "text": "this is a folded table. its brown in color and is on the right of the entry door way.",
+        "scene_id": "scene0249_00",
+        "target_id": "22",
+        "target_label": "folded_table",
+        "program": "# define variables for the folded table and the entry door way.\nFOLDED_TABLE_0 = DEFINE_VARIABLE(labels=[\"folded table\", \"table\"]) # \"table\" is also relevant since it might refer to the same object as \"folded table\"\n\n# the query does not include \"entry door way\" in RELEVANT OBJECT LABELS, so the \"right of the entry door way\" relation cannot be used.\n\n# add a constraint: the folded table is brown\nCONSTRAINT_COLOR(target=FOLDED_TABLE_0, condition=\"brown\")\n\n# set the CSP variable for the target object\nSET_TARGET(FOLDED_TABLE_0)",
+        "query_id": 6577,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -2.7842602729797363,
+                0.011875060386955738,
+                -0.04312337562441826
+            ],
+            "pmax": [
+                4.343435764312744,
+                1.798604965209961,
+                0.8732926845550537
+            ]
+        },
+        "anchor_bboxes": {},
+        "csp_desc": "1-folded_table-table (target)\nCONSTRAINT_COLOR [target: 1-folded_table-table] [condition: brown]"
+    },
+    {
+        "text": "this is a brown wooden door. it is located next to the bathroom vanity.",
+        "scene_id": "scene0221_00",
+        "target_id": "13",
+        "target_label": "door",
+        "program": "# define variables for the door and bathroom vanity\nDOOR_0 = DEFINE_VARIABLE(labels=[\"door\", \"doorframe\"])\nBATHROOM_VANITY_0 = DEFINE_VARIABLE(labels=[\"bathroom vanity\"])\n\n# add a constraint: the door is brown\nCONSTRAINT_COLOR(target=DOOR_0, condition=\"brown\")\n\n# add a constraint: the door is beside the bathroom vanity\nCONSTRAINT_BESIDE(target=DOOR_0, anchor=BATHROOM_VANITY_0)\n\n# set the CSP variable for the target object\nSET_TARGET(DOOR_0)",
+        "query_id": 6639,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.28878253698349,
+                -3.1716911792755127,
+                0.2705386281013489
+            ],
+            "pmax": [
+                -0.09994396567344666,
+                -2.3558642864227295,
+                1.9910446405410767
+            ]
+        },
+        "anchor_bboxes": {
+            "2-bathroom_vanity": {
+                "pmin": [
+                    0.9594453573226929,
+                    -4.0780558586120605,
+                    0.5902936458587646
+                ],
+                "pmax": [
+                    1.5645956993103027,
+                    -3.0207784175872803,
+                    1.0348563194274902
+                ]
+            }
+        },
+        "csp_desc": "1-door-doorframe (target)\n2-bathroom_vanity\nCONSTRAINT_BESIDE [target: 1-door-doorframe] [anchor: 2-bathroom_vanity]\nCONSTRAINT_COLOR [target: 1-door-doorframe] [condition: brown]"
+    },
+    {
+        "text": "this is a black chair. it is in front of another chair.",
+        "scene_id": "scene0660_00",
+        "target_id": "2",
+        "target_label": "chair",
+        "program": "# define variables for the chair and the other chair\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nCHAIR_1 = DEFINE_VARIABLE(labels=[\"chair\"])\n\n# add a constraint: the chair is black\nCONSTRAINT_COLOR(target=CHAIR_0, condition=\"black\")\n\n# add a constraint: the chair is in front of another chair\nCONSTRAINT_FRONT(target=CHAIR_0, anchor=CHAIR_1)\n\n# set the CSP variable for the target object\nSET_TARGET(CHAIR_0)",
+        "query_id": 7003,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.0827627182006836,
+                -1.3172736167907715,
+                0.335599809885025
+            ],
+            "pmax": [
+                -0.45552507042884827,
+                -0.6620648503303528,
+                0.8197551965713501
+            ]
+        },
+        "anchor_bboxes": {
+            "2-chair": {
+                "pmin": [
+                    -0.9584217667579651,
+                    -0.5095059275627136,
+                    0.409306138753891
+                ],
+                "pmax": [
+                    -0.40715292096138,
+                    -0.2977345287799835,
+                    0.806022047996521
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n2-chair\nCONSTRAINT_FRONT [target: 1-chair] [anchor: 2-chair]\nCONSTRAINT_COLOR [target: 1-chair] [condition: black]"
+    },
+    {
+        "text": "there is a square armchair. it is to the left of another armchair.",
+        "scene_id": "scene0690_00",
+        "target_id": "18",
+        "target_label": "armchair",
+        "program": "# define variables for the armchairs\nARMCHAIR_0 = DEFINE_VARIABLE(labels=[\"armchair\"])\nARMCHAIR_1 = DEFINE_VARIABLE(labels=[\"armchair\"])\n\n# add a constraint: the target armchair is to the left of another armchair\nCONSTRAINT_LEFT(target=ARMCHAIR_0, anchor=ARMCHAIR_1)\n\n# set the variable for the target object\nSET_TARGET(ARMCHAIR_0)",
+        "query_id": 7532,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.1848793029785156,
+                -1.6768358945846558,
+                -0.011567171663045883
+            ],
+            "pmax": [
+                -0.10887981951236725,
+                -0.7699801325798035,
+                0.8410744071006775
+            ]
+        },
+        "anchor_bboxes": {
+            "2-armchair": {
+                "pmin": [
+                    -2.224092960357666,
+                    -1.608824372291565,
+                    0.006353490054607391
+                ],
+                "pmax": [
+                    -1.1231058835983276,
+                    -0.6449569463729858,
+                    0.8569771647453308
+                ]
+            }
+        },
+        "csp_desc": "1-armchair (target)\n2-armchair\nCONSTRAINT_LEFT [target: 1-armchair] [anchor: 2-armchair]"
+    },
+    {
+        "text": "a white wooden cabinet. on the right to the fridge.",
+        "scene_id": "scene0488_00",
+        "target_id": "21",
+        "target_label": "kitchen_cabinet",
+        "program": "# define variables for the white wooden cabinet\nKITCHEN_CABINET_0 = DEFINE_VARIABLE(labels=[\"kitchen cabinet\", \"kitchen cabinets\"])\n\n# define variable for the fridge\nREFRIGERATOR_0 = DEFINE_VARIABLE(labels=[\"refrigerator\"])\n\n# add a constraint: the kitchen cabinet is white\nCONSTRAINT_COLOR(target=KITCHEN_CABINET_0, condition=\"white\")\n\n# add a constraint: the kitchen cabinet is on the right of the fridge\nCONSTRAINT_RIGHT(target=KITCHEN_CABINET_0, anchor=REFRIGERATOR_0)\n\n# set the CSP variable for the target object\nSET_TARGET(KITCHEN_CABINET_0)",
+        "query_id": 8235,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.6713032722473145,
+                -0.6481579542160034,
+                -0.0031968324910849333
+            ],
+            "pmax": [
+                -0.9768316745758057,
+                -0.48840728402137756,
+                0.9076348543167114
+            ]
+        },
+        "anchor_bboxes": {
+            "2-refrigerator": {
+                "pmin": [
+                    -0.9828138947486877,
+                    -0.6183590888977051,
+                    -0.007168017793446779
+                ],
+                "pmax": [
+                    -0.18739521503448486,
+                    -0.35022327303886414,
+                    1.7427713871002197
+                ]
+            }
+        },
+        "csp_desc": "1-kitchen_cabinet-kitchen_cabinets (target)\n2-refrigerator\nCONSTRAINT_RIGHT [target: 1-kitchen_cabinet-kitchen_cabinets] [anchor: 2-refrigerator]\nCONSTRAINT_COLOR [target: 1-kitchen_cabinet-kitchen_cabinets] [condition: white]"
+    },
+    {
+        "text": "this is a brown desk. it is behind a chair.",
+        "scene_id": "scene0565_00",
+        "target_id": "13",
+        "target_label": "desk",
+        "program": "# define variables for the desk and chair\nDESK_0 = DEFINE_VARIABLE(labels=[\"desk\"])\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\n\n# add a constraint: the desk is brown\nCONSTRAINT_COLOR(target=DESK_0, condition=\"brown\")\n\n# add a constraint: the desk is behind the chair\nCONSTRAINT_BEHIND(target=DESK_0, anchor=CHAIR_0)\n\n# set the CSP variable for the target object\nSET_TARGET(DESK_0)",
+        "query_id": 8307,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.13012835383415222,
+                1.3707886934280396,
+                0.11286686360836029
+            ],
+            "pmax": [
+                0.5717141628265381,
+                2.663393020629883,
+                1.1581965684890747
+            ]
+        },
+        "anchor_bboxes": {
+            "2-chair": {
+                "pmin": [
+                    -0.2926546335220337,
+                    1.6247671842575073,
+                    0.04894738644361496
+                ],
+                "pmax": [
+                    0.44157713651657104,
+                    2.3000361919403076,
+                    1.0728925466537476
+                ]
+            }
+        },
+        "csp_desc": "1-desk (target)\n2-chair\nCONSTRAINT_BEHIND [target: 1-desk] [anchor: 2-chair]\nCONSTRAINT_COLOR [target: 1-desk] [condition: brown]"
+    },
+    {
+        "text": "this pillow is on the bed. it is on the left side.",
+        "scene_id": "scene0645_00",
+        "target_id": "62",
+        "target_label": "pillow",
+        "program": "# define variables for the pillow and the bed\nPILLOW_0 = DEFINE_VARIABLE(labels=[\"pillow\"])\nBED_0 = DEFINE_VARIABLE(labels=[\"bed\"])\n\n# add a constraint: the pillow is on the bed\nCONSTRAINT_ON(target=PILLOW_0, anchor=BED_0)\n\n# add a constraint: the pillow is on the left side\nCONSTRAINT_LEFT(target=PILLOW_0, anchor=BED_0)\n\n# set the CSP variable for the target object\nSET_TARGET(PILLOW_0)",
+        "query_id": 8288,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -2.8657150268554688,
+                1.1977976560592651,
+                0.717134952545166
+            ],
+            "pmax": [
+                -2.4989395141601562,
+                1.8103523254394531,
+                0.8695425391197205
+            ]
+        },
+        "anchor_bboxes": {
+            "2-bed": {
+                "pmin": [
+                    -3.3646492958068848,
+                    0.7485800981521606,
+                    0.009714336134493351
+                ],
+                "pmax": [
+                    -1.2288106679916382,
+                    2.368873357772827,
+                    1.5252100229263306
+                ]
+            }
+        },
+        "csp_desc": "1-pillow (target)\n2-bed\nCONSTRAINT_LEFT [target: 1-pillow] [anchor: 2-bed]\nCONSTRAINT_ON [target: 1-pillow] [anchor: 2-bed]"
+    },
+    {
+        "text": "this is a black office chair. it is at a desk.",
+        "scene_id": "scene0131_00",
+        "target_id": "9",
+        "target_label": "office_chair",
+        "program": "# define variables for the office chair and the desk\nOFFICE_CHAIR_0 = DEFINE_VARIABLE(labels=[\"office chair\", \"chair\"])\nDESK_0 = DEFINE_VARIABLE(labels=[\"desk\"])\n\n# add a constraint: the office chair is black\nCONSTRAINT_COLOR(target=OFFICE_CHAIR_0, condition=\"black\")\n\n# add a constraint: the office chair is at the desk\nCONSTRAINT_NEAR(target=OFFICE_CHAIR_0, anchor=DESK_0)\n\n# set the CSP variable for the target object\nSET_TARGET(OFFICE_CHAIR_0)",
+        "query_id": 8430,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -0.1001836508512497,
+                -0.4688678979873657,
+                -0.020768631249666214
+            ],
+            "pmax": [
+                0.5878612399101257,
+                0.1932692527770996,
+                0.9992523193359375
+            ]
+        },
+        "anchor_bboxes": {
+            "2-desk": {
+                "pmin": [
+                    -1.4075782299041748,
+                    -3.9504663944244385,
+                    -0.024214405566453934
+                ],
+                "pmax": [
+                    1.2675073146820068,
+                    3.508484125137329,
+                    0.9400579929351807
+                ]
+            }
+        },
+        "csp_desc": "1-office_chair-chair (target)\n2-desk\nCONSTRAINT_NEAR [target: 1-office_chair-chair] [anchor: 2-desk]\nCONSTRAINT_COLOR [target: 1-office_chair-chair] [condition: black]"
+    },
+    {
+        "text": "the object is a brown storage container on wheels. it is in between the white step ladder and multi colored desk.",
+        "scene_id": "scene0343_00",
+        "target_id": "9",
+        "target_label": "cart",
+        "program": "# define variables for the objects\nCART_0 = DEFINE_VARIABLE(labels=[\"cart\"])\nSTEP_STOOL_0 = DEFINE_VARIABLE(labels=[\"step stool\"])\nTABLE_0 = DEFINE_VARIABLE(labels=[\"table\"])\n\n# add a constraint: the object is brown\nCONSTRAINT_COLOR(target=CART_0, condition=\"brown\")\n\n# add a constraint: the object is in between a step ladder and a multi colored desk.\n# Note: \"multi colored desk\" cannot be translated into a single color constraint.\nCONSTRAINT_BETWEEN(target=CART_0, anchors={STEP_STOOL_0, TABLE_0})\n\n# set the CSP variable for the target object\nSET_TARGET(CART_0)",
+        "query_id": 8605,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -2.637267827987671,
+                0.27402058243751526,
+                0.19988730549812317
+            ],
+            "pmax": [
+                -2.0636253356933594,
+                0.8821654319763184,
+                1.0473295450210571
+            ]
+        },
+        "anchor_bboxes": {
+            "2-step_stool": {
+                "pmin": [
+                    -2.5683841705322266,
+                    -0.7896624207496643,
+                    0.2207261323928833
+                ],
+                "pmax": [
+                    -2.0802552700042725,
+                    -0.21006500720977783,
+                    0.8804468512535095
+                ]
+            },
+            "3-table": {
+                "pmin": [
+                    -2.102576732635498,
+                    1.320582389831543,
+                    0.13651973009109497
+                ],
+                "pmax": [
+                    -1.0252504348754883,
+                    1.7886962890625,
+                    1.0389368534088135
+                ]
+            }
+        },
+        "csp_desc": "1-cart (target)\n3-table\n2-step_stool\nCONSTRAINT_COLOR [target: 1-cart] [condition: brown]\nCONSTRAINT_BETWEEN [target: 1-cart] [anchors: 3-table 2-step_stool]"
+    },
+    {
+        "text": "this is a tall chair. it is to the right of the round table.",
+        "scene_id": "scene0618_00",
+        "target_id": "2",
+        "target_label": "chair",
+        "program": "# define variables for the chair and table\nCHAIR_0 = DEFINE_VARIABLE(labels=[\"chair\"])\nTABLE_0 = DEFINE_VARIABLE(labels=[\"table\"])\n\n# add a constraint: the chair is tall\nCONSTRAINT_MAX_OF(target=CHAIR_0, score_func=\"size-z\")\n\n# add a constraint: the chair is to the right of the table\nCONSTRAINT_RIGHT(target=CHAIR_0, anchor=TABLE_0)\n\n# set the CSP variable for the target object\nSET_TARGET(CHAIR_0)",
+        "query_id": 9184,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                -1.095984697341919,
+                -4.337934494018555,
+                0.03275514394044876
+            ],
+            "pmax": [
+                -0.39442896842956543,
+                -3.718684434890747,
+                1.183943510055542
+            ]
+        },
+        "anchor_bboxes": {
+            "2-table": {
+                "pmin": [
+                    1.5297859907150269,
+                    -1.0739790201187134,
+                    -0.021753011271357536
+                ],
+                "pmax": [
+                    2.110858678817749,
+                    -0.4381524920463562,
+                    1.0832793712615967
+                ]
+            }
+        },
+        "csp_desc": "1-chair (target)\n2-table\nCONSTRAINT_RIGHT [target: 1-chair] [anchor: 2-table]\nCONSTRAINT_MAX_OF [target: 1-chair] [anchor: (none)]"
+    },
+    {
+        "text": "it is a brown desk. the brown desk is the first desk at the right side of the room.",
+        "scene_id": "scene0653_00",
+        "target_id": "18",
+        "target_label": "desk",
+        "program": "# define variable for the desk\nDESK_0 = DEFINE_VARIABLE(labels=[\"desk\"])\n\n# define variable for the room center\nROOM_CENTER = DEFINE_VARIABLE(labels=[\"room center\"])\n\n# add a constraint: the desk is brown\nCONSTRAINT_COLOR(target=DESK_0, condition=\"brown\")\n\n# the desk is at the right side of the room\n# Since we are looking at the right side of the room, it will also be near the room corner\n# To define it more specifically, we define the right side of the room to be the farthest from the room center\nCONSTRAINT_MAX_OF(target=DESK_0, score_func=\"distance-to-center\")\n\n# set the variable for the target object\nSET_TARGET(DESK_0)",
+        "query_id": 9373,
+        "acc05": false,
+        "acc025": false,
+        "predicted_bbox": {
+            "pmin": [
+                1.3767908811569214,
+                1.2173926830291748,
+                -0.0007071869331412017
+            ],
+            "pmax": [
+                2.8833582401275635,
+                2.015639066696167,
+                0.8741554617881775
+            ]
+        },
+        "anchor_bboxes": {
+            "2-room_center": {
+                "pmin": [
+                    -0.05841325223445892,
+                    -0.08511601388454437,
+                    1.496562123298645
+                ],
+                "pmax": [
+                    -0.05839325487613678,
+                    -0.08509601652622223,
+                    1.4965821504592896
+                ]
+            }
+        },
+        "csp_desc": "1-desk (target)\n2-room_center\nCONSTRAINT_COLOR [target: 1-desk] [condition: brown]\nCONSTRAINT_MAX_OF [target: 1-desk] [anchor: (none)]"
+    }
+]
