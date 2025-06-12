@@ -1,6 +1,6 @@
 # HSV-DBSCAN: Enhanced 3D Visual Grounding with Color Recognition and Caching
 
-<p>
+<p><strong>baseline:</strong>
 <a href="https://arxiv.org/pdf/2411.14594">
     <img src="https://img.shields.io/badge/PDF-arXiv-brightgreen" /></a>
 <a href="https://pytorch.org/">
